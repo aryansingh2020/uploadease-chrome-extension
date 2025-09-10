@@ -1,0 +1,101 @@
+{
+    "extension_name": {
+        "message": "UploadEase"
+    },
+    "extension_description": {
+        "message": "Automatically helps you upload files with proper size, format, and aspect ratio."
+    },
+    "popup_title": {
+        "message": "UploadEase Assistant"
+    },
+    "assistance_prompt_title": {
+        "message": "UploadEase Assistant"
+    },
+    "assistance_prompt_message": {
+        "message": "I detected file upload requirements on this page. Would you like assistance with file processing?"
+    },
+    "assistance_accept": {
+        "message": "Yes, Help Me"
+    },
+    "assistance_dismiss": {
+        "message": "Not Now"
+    },
+    "drop_file_here": {
+        "message": "Drop your file here"
+    },
+    "or_click_to_browse": {
+        "message": "or click to browse"
+    },
+    "detected_requirements": {
+        "message": "Detected Requirements"
+    },
+    "processing_options": {
+        "message": "Processing Options"
+    },
+    "width_px": {
+        "message": "Width (px)"
+    },
+    "height_px": {
+        "message": "Height (px)"
+    },
+    "output_format": {
+        "message": "Output Format"
+    },
+    "max_size_kb": {
+        "message": "Max Size (KB)"
+    },
+    "min_size_kb": {
+        "message": "Min Size (KB)"
+    },
+    "quality": {
+        "message": "Quality"
+    },
+    "aspect_ratio_warning": {
+        "message": "⚠️ Changing dimensions may distort the image"
+    },
+    "process_file": {
+        "message": "Process File"
+    },
+    "download": {
+        "message": "Download"
+    },
+    "drag_drop": {
+        "message": "Drag & Drop"
+    },
+    "processing_file": {
+        "message": "Processing your file..."
+    },
+    "processing_complete": {
+        "message": "Processing Complete"
+    },
+    "original_size": {
+        "message": "Original Size:"
+    },
+    "new_size": {
+        "message": "New Size:"
+    },
+    "size_reduction": {
+        "message": "Size Reduction:"
+    },
+    "ready_to_process": {
+        "message": "Ready to process files"
+    },
+    "file_uploaded_successfully": {
+        "message": "File uploaded successfully!"
+    },
+    "drag_mode_activated": {
+        "message": "Drag mode activated - drop file on the page"
+    },
+    "error_select_file": {
+        "message": "Please select a file first."
+    },
+    "error_invalid_file_type": {
+        "message": "Please select a valid image or PDF file."
+    },
+    "error_processing_failed": {
+        "message": "Processing failed:"
+    },
+    "error_failed_to_start_drag_mode": {
+        "message": "Failed to start drag mode"
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UploadEase</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <div class="popup-header">
+            <img src="../icons/icon48.png" alt="UploadEase" class="header-icon">
+            <h1>UploadEase</h1>
+            <!-- <button id="settings-btn" class="settings-btn" title="Settings">⚙️</button> -->
+        </div>
+
+        <!-- Main Content -->
+        <div class="popup-content">
+            <!-- File Upload Section -->
+            <div class="upload-section">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">
+                        <p class="upload-primary">Drop your image file here</p>
+                        <p class="upload-secondary">or click to browse</p>
+                    </div>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                </div>
+                
+                <!-- File Info -->
+                <div class="file-info" id="file-info" style="display: none;">
+                    <div class="file-details">
+                        <span class="file-name" id="file-name"></span>
+                        <span class="file-size" id="file-size"></span>
+                    </div>
+                    <button id="remove-file" class="remove-btn">×</button>
+                </div>
+            </div>
+
+            <!-- Detected Requirements -->
+            <div class="requirements-section" id="requirements-section" style="display: none;">
+                <h3>📋 Detected Requirements</h3>
+                <div class="requirements-list" id="requirements-list"></div>
+            </div>
+
+            <!-- Processing Options -->
+            <div class="options-section" id="options-section" style="display: none;">
+                <h3>⚙️ Processing Options</h3>
+                
+                <!-- Image Dimensions -->
+                <div class="option-group">
+                    <label class="option-label">
+                        <span>Width (px)</span>
+                        <input type="number" id="width-input" placeholder="Auto" min="1">
+                    </label>
+                    <label class="option-label">
+                        <span>Height (px)</span>
+                        <input type="number" id="height-input" placeholder="Auto" min="1">
+                    </label>
+                </div>
+
+                <!-- Aspect Ratio Warning -->
+                <div class="aspect-ratio-warning" id="aspect-ratio-warning" style="display: none;">
+                    Fill the width and height to maintain the aspect ratio
+                </div>
+
+                <!-- File Format -->
+                <div class="option-group">
+                    <label class="option-label">
+                        <span>Output Format</span>
+        <select id="format-select">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPEG/JPG</option>
+            <option value="webp">WebP</option>
+            <!-- <option value="pdf">PDF</option> -->
+        </select>
+                    </label>
+                </div>
+
+                <!-- File Size -->
+                <div class="option-group">
+                    <label class="option-label">
+                        <span>Min Size (KB)</span>
+                        <input type="number" id="min-size-input" placeholder="No limit" min="1">
+                    </label>
+                    <label class="option-label">
+                        <span>Max Size (KB)</span>
+                        <input type="number" id="max-size-input" placeholder="No limit" min="1">
+                    </label>
+                </div>
+
+                <!-- Quality (for JPEG) -->
+                <div class="option-group" id="quality-group" style="display: none;">
+                    <label class="option-label">
+                        <span>Quality</span>
+                        <input type="range" id="quality-slider" min="0.1" max="1" step="0.1" value="0.9">
+                        <span id="quality-value">90%</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons" id="action-buttons" style="display: none;">
+                <button id="process-btn" class="btn btn-primary">
+                    <span class="btn-icon">🔄</span>
+                    Process File
+                </button>
+                <button id="download-btn" class="btn btn-secondary" style="display: none;">
+                    <span class="btn-icon">⬇️</span>
+                    Download
+                </button>
+            </div>
+
+            <!-- Processing Status -->
+            <div class="processing-status" id="processing-status" style="display: none;">
+                <div class="spinner"></div>
+                <span>Processing your file...</span>
+            </div>
+
+            <!-- Results -->
+            <div class="results-section" id="results-section" style="display: none;">
+                <h3>✅ Processing Complete</h3>
+                <div class="result-info">
+                    <div class="result-item">
+                        <span class="result-label">Original Size:</span>
+                        <span class="result-value" id="original-size"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">New Size:</span>
+                        <span class="result-value" id="new-size"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Size Reduction:</span>
+                        <span class="result-value" id="size-reduction"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <div class="footer-links">
+                <a href="#" id="help-link">Help</a>
+                <a href="#" id="feedback-link">Feedback</a>
+            </div>
+            <div class="footer-status" id="footer-status">
+                Ready to process files
+            </div>
+        </div>
+</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

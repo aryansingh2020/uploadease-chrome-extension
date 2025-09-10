@@ -1,0 +1,40 @@
+{
+  "name": "uploadease",
+  "version": "1.0.0",
+  "description": "A Chrome extension that automatically detects file upload requirements and helps you process files to meet those specifications.",
+  "main": "background.js",
+  "scripts": {
+    "build": "echo 'No build process required - extension uses vanilla JavaScript'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'Linting not configured'",
+    "package": "zip -r uploadease-extension.zip . -x '*.git*' 'node_modules/*' '*.md' 'package*.json'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "file-upload",
+    "image-processing",
+    "file-conversion",
+    "resize",
+    "compress",
+    "pdf",
+    "image",
+    "upload-assistant"
+  ],
+  "author": "UploadEase Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/UploadEase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/UploadEase/issues"
+  },
+  "homepage": "https://github.com/yourusername/UploadEase#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "Chrome >= 88",
+    "Edge >= 88"
+  ]
+}

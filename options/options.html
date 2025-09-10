@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UploadEase Settings</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="options-container">
+        <header class="options-header">
+            <img src="../icons/icon48.png" alt="UploadEase" class="header-icon">
+            <h1>UploadEase Settings</h1>
+        </header>
+
+        <main class="options-content">
+            <!-- General Settings -->
+            <section class="settings-section">
+                <h2>General Settings</h2>
+                
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <input type="checkbox" id="auto-detect" checked>
+                        <span class="checkmark"></span>
+                        <div class="setting-info">
+                            <span class="setting-title">Auto-detect file uploads</span>
+                            <span class="setting-description">Automatically detect file upload fields and show assistance prompts</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <input type="checkbox" id="show-notifications" checked>
+                        <span class="checkmark"></span>
+                        <div class="setting-info">
+                            <span class="setting-title">Show notifications</span>
+                            <span class="setting-description">Display browser notifications when file uploads are detected</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <input type="checkbox" id="remember-settings">
+                        <span class="checkmark"></span>
+                        <div class="setting-info">
+                            <span class="setting-title">Remember processing settings</span>
+                            <span class="setting-description">Remember your last used processing options</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Default Processing Settings -->
+            <section class="settings-section">
+                <h2>Default Processing Settings</h2>
+                
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Default Output Format</span>
+                        <select id="default-format" class="setting-input">
+                            <option value="png">PNG</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="webp">WebP</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Default Width (px)</span>
+                        <input type="number" id="default-width" class="setting-input" placeholder="Auto">
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Default Height (px)</span>
+                        <input type="number" id="default-height" class="setting-input" placeholder="Auto">
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Default Quality</span>
+                        <input type="range" id="default-quality" class="setting-range" min="0.1" max="1" step="0.1" value="0.9">
+                        <span id="quality-display" class="range-value">90%</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- File Size Limits -->
+            <section class="settings-section">
+                <h2>File Size Limits</h2>
+                
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Maximum file size (MB)</span>
+                        <input type="number" id="max-file-size" class="setting-input" placeholder="No limit" min="1">
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Compression threshold (KB)</span>
+                        <input type="number" id="compression-threshold" class="setting-input" placeholder="500" min="100">
+                        <span class="setting-description">Files larger than this will be automatically compressed</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Advanced Settings -->
+            <section class="settings-section">
+                <h2>Advanced Settings</h2>
+                
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <input type="checkbox" id="high-quality-resize">
+                        <span class="checkmark"></span>
+                        <div class="setting-info">
+                            <span class="setting-title">High-quality image resizing</span>
+                            <span class="setting-description">Use higher quality algorithms for image resizing (slower but better quality)</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <input type="checkbox" id="preserve-metadata">
+                        <span class="checkmark"></span>
+                        <div class="setting-info">
+                            <span class="setting-title">Preserve image metadata</span>
+                            <span class="setting-description">Keep EXIF data and other metadata when processing images</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">
+                        <span class="setting-title">Aspect ratio warning threshold</span>
+                        <input type="range" id="aspect-ratio-threshold" class="setting-range" min="0.01" max="0.1" step="0.01" value="0.05">
+                        <span id="aspect-ratio-display" class="range-value">5%</span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Reset Settings -->
+            <section class="settings-section">
+                <h2>Reset Settings</h2>
+                <div class="setting-group">
+                    <button id="reset-settings" class="btn btn-danger">Reset to Defaults</button>
+                    <span class="setting-description">This will reset all settings to their default values</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="options-footer">
+            <div class="footer-actions">
+                <button id="save-btn" class="btn btn-primary">Save Settings</button>
+                <button id="cancel-btn" class="btn btn-secondary">Cancel</button>
+            </div>
+            <div class="footer-status" id="save-status">Ready</div>
+        </footer>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

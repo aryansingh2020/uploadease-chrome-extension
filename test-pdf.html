@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Generation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PDF Generation Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Image to PDF Conversion</h2>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="testPDFGeneration()">Convert to PDF</button>
+        <div id="result"></div>
+    </div>
+
+    <script type="module">
+        // Import the PDF converter
+        import { imageToPDF } from './utils/fileConverter.js';
+
+        window.testPDFGeneration = async function() {
+            const fileInput = document.getElementById('imageInput');
+            const resultDiv = document.getElementById('result');
+            
+            if (!fileInput.files[0]) {
+                resultDiv.innerHTML = '<p style="color: red;">Please select an image file first.</p>';
+                return;
+            }
+
+            const file = fileInput.files[0];
+            resultDiv.innerHTML = '<p>Processing...</p>';
+
+            try {
+                const pdfBlob = await imageToPDF(file);
+                
+                // Create download link
+                const url = URL.createObjectURL(pdfBlob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `converted_${file.name.split('.')[0]}.pdf`;
+                a.textContent = 'Download PDF';
+                a.style.display = 'block';
+                a.style.marginTop = '10px';
+                
+                resultDiv.innerHTML = `
+                    <p style="color: green;">✅ PDF generated successfully!</p>
+                    <p>File size: ${(pdfBlob.size / 1024).toFixed(2)} KB</p>
+                    <p>MIME type: ${pdfBlob.type}</p>
+                `;
+                resultDiv.appendChild(a);
+                
+                // Also create an iframe to preview the PDF
+                const iframe = document.createElement('iframe');
+                iframe.src = url;
+                iframe.style.width = '100%';
+                iframe.style.height = '500px';
+                iframe.style.border = '1px solid #ddd';
+                iframe.style.marginTop = '10px';
+                resultDiv.appendChild(iframe);
+                
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+        };
+    </script>
+</body>
+</html>
