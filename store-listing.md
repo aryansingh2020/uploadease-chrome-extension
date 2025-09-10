@@ -44,8 +44,6 @@ Productivity
 ## Tags
 file upload, image processing, pdf converter, file converter, image resizer, document upload, passport photo, file optimization
 
-## Screenshots
-[Add screenshots showing the extension in action]
 
 ## Privacy Policy
 This extension does not collect, store, or transmit any personal data. All file processing is performed locally in your browser. No files or personal information are sent to external servers.
